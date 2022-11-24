@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide&display=swap');
+
+$font: 'Audiowide', cursive;
+
+ /*making an animated button with neon glow effect*/
+
+.button{
+    position: relative;
+    font-family: 'Audiowide', cursive;
+    font-size: 1.25rem;
+    border: none;
+    padding: 1.5rem 3.5rem;
+    border-radius: 2.5rem;
+    letter-spacing: .45rem;
+    text-transform: uppercase;
+    color: white;
+    background: linear-gradient(90deg,#09f0ed,#ff0efe,#5c54fd,#09f0ed);
+    background-size: 400%;
+    animation: neon 10s linear infinite;
+    font-weight: bold;
+    margin-left: 50px;
+  }
+
+  .button:after{
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    border-radius: 2.5rem;
+    filter: blur(1px);
+    z-index: -1;
+    animation: glow 3s linear infinite;
+  }
+
+  @keyframes neon {
+    from{
+      background-position: 0%;
+    }
+    to{
+      background-position: 400%;
+    }
+  }
+
+  
+  @keyframes glow {
+    from{
+      filter: blur(1px);
+    }
+    50%{
+      filter: blur(20px);
+    }
+    to{
+      filter: blur(1px);
+    }
+  }
+
+.preview{
+   display:none;
+}
+
+
+ /*to style the preview */
+   .preview{
+      display:block;
+   }
+   .name, #warp-wrapper{
+      color: rgb(221, 99, 254);
+   }
+   #warp{
+      background-color: rgb(221, 99, 254);
+   }
+}
+
+html, body{
+   min-height: 100vh;
+}
+
+body{
+   overflow:hidden;
+   font-family: $font;
+}
+
+ /*to make the ellement of the planet have a moving effect */
+
+#wrapper{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-height:100vh;
+   background-color: #0f0737;
+   overflow:hidden;
+}
+
+.rotate{
+   animation-name: rotate;
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+}
+
+.atmosphere{
+   transform: translateX(0) translateY(0) scale(1);
+   transition-duration: 1s;
+   transition-timing-function: ease-in-out;
+   opacity:1;
+   &.warpin{
+      transform: translateX(100vh) translateY(0) scale(0);
+      opacity: 0;
+   }
+   &.warpout{
+      transform: translateX(-100vh) translateY(0) scale(0);
+      opacity: 0;
+   }
+}
+
+
+
+@keyframes rotate {
+   from {
+      left: 0%;
+   }
+   to{
+      left: 100%;
+   } 
+}
+
+
+   .bottom{
+      transform: translateX(0) translateY(0%) scale(1);
+      transition-duration: 0.5s;
+   }
+   .seed-wrapper{
+      font-size: 13px;
+   }
+   & > *{
+      font-size: 1em;
+      position: relative;
+      text-transform: uppercase;
+   }
+   .name, #warp, .seed, #warp-wrapper:after{
+      transition-duration: 0.3s;
+   }
+}
+
+.name{
+   color: #FFFFFF;
+}
+

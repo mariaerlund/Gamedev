@@ -1,0 +1,338 @@
+@import url("https://fonts.googleapis.com/css?family=Audiowide&display=swap");
+.button {
+  position: relative;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.25rem;
+  border: none;
+  padding: 1.5rem 3.5rem;
+  border-radius: 2.5rem;
+  letter-spacing: 0.45rem;
+  text-transform: uppercase;
+  color: white;
+  background: linear-gradient(90deg, #09f0ed, #ff0efe, #5c54fd, #09f0ed);
+  background-size: 400%;
+  -webkit-animation: neon 10s linear infinite;
+          animation: neon 10s linear infinite;
+  font-weight: bold;
+  margin-left: 50px;
+}
+
+.button:after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  border-radius: 2.5rem;
+  filter: blur(1px);
+  z-index: -1;
+  -webkit-animation: glow 3s linear infinite;
+          animation: glow 3s linear infinite;
+}
+
+@-webkit-keyframes neon {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 400%;
+  }
+}
+
+@keyframes neon {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 400%;
+  }
+}
+@-webkit-keyframes glow {
+  from {
+    filter: blur(1px);
+  }
+  50% {
+    filter: blur(20px);
+  }
+  to {
+    filter: blur(1px);
+  }
+}
+@keyframes glow {
+  from {
+    filter: blur(1px);
+  }
+  50% {
+    filter: blur(20px);
+  }
+  to {
+    filter: blur(1px);
+  }
+}
+.preview {
+  display: none;
+}
+
+/*for at kunne style preview*/
+.nojs .preview {
+  display: block;
+}
+.nojs .name, .nojs #warp-wrapper {
+  color: rgb(221, 99, 254);
+}
+.nojs #warp {
+  background-color: rgb(221, 99, 254);
+}
+
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  overflow: hidden;
+  font-family: "Audiowide", cursive;
+}
+
+#wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #0f0737;
+  overflow: hidden;
+}
+
+.rotate {
+  -webkit-animation-name: rotate;
+          animation-name: rotate;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.atmosphere {
+  transform: translateX(0) translateY(0) scale(1);
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+  opacity: 1;
+}
+.atmosphere.warpin {
+  transform: translateX(100vh) translateY(0) scale(0);
+  opacity: 0;
+}
+.atmosphere.warpout {
+  transform: translateX(-100vh) translateY(0) scale(0);
+  opacity: 0;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes rotate {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
+}
+.moon, .mmwrapper {
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.mmwrapper {
+  -webkit-animation-name: orbit3d;
+          animation-name: orbit3d;
+}
+
+.moon {
+  -webkit-animation-name: orbit;
+          animation-name: orbit;
+}
+
+@-webkit-keyframes orbit {
+  0% {
+    left: 50%;
+    opacity: 0.5;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+  }
+  29.99% {
+    left: 100%;
+    opacity: 0.5;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+  }
+  30% {
+    left: 100%;
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+  }
+  50% {
+    left: 50%;
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(2);
+  }
+  69.99% {
+    left: 0%;
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+  }
+  70% {
+    left: 0%;
+    opacity: 0.5;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+  }
+  100% {
+    left: 50%;
+    opacity: 0.5;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+  }
+}
+
+@keyframes orbit {
+  0% {
+    left: 50%;
+    opacity: 0.5;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+  }
+  29.99% {
+    left: 100%;
+    opacity: 0.5;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+  }
+  30% {
+    left: 100%;
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+  }
+  50% {
+    left: 50%;
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(2);
+  }
+  69.99% {
+    left: 0%;
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+  }
+  70% {
+    left: 0%;
+    opacity: 0.5;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+  }
+  100% {
+    left: 50%;
+    opacity: 0.5;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+  }
+}
+@-webkit-keyframes orbit3d {
+  0% {
+    z-index: -25;
+  }
+  29.99% {
+    z-index: -25;
+  }
+  30% {
+    z-index: 25;
+  }
+  50% {
+    z-index: 25;
+  }
+  69.99% {
+    z-index: 25;
+  }
+  70% {
+    z-index: -25;
+  }
+  100% {
+    z-index: -25;
+  }
+}
+@keyframes orbit3d {
+  0% {
+    z-index: -25;
+  }
+  29.99% {
+    z-index: -25;
+  }
+  30% {
+    z-index: 25;
+  }
+  50% {
+    z-index: 25;
+  }
+  69.99% {
+    z-index: 25;
+  }
+  70% {
+    z-index: -25;
+  }
+  100% {
+    z-index: -25;
+  }
+}
+#star-details-wrapper {
+  opacity: 1;
+  font-size: 20px;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.5s;
+  position: absolute;
+  top: 0;
+  box-sizing: border-box;
+  padding: 10px 0px 7vh 0;
+  color: #FFFFFF;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+#star-details-wrapper.hide {
+  pointer-events: none;
+  opacity: 0.5;
+  filter: blur(2px);
+}
+#star-details-wrapper.hide .top {
+  transform: translateX(0) translateY(-300%) scale(0.5);
+}
+#star-details-wrapper.hide .bottom {
+  transform: translateX(0) translateY(300%) scale(0.5);
+}
+#star-details-wrapper .top {
+  margin: 10px 0 30px 0;
+  text-align: center;
+  transform: translateX(0) translateY(0%) scale(1);
+  transition-duration: 0.5s;
+}
+#star-details-wrapper .bottom {
+  transform: translateX(0) translateY(0%) scale(1);
+  transition-duration: 0.5s;
+}
+#star-details-wrapper .seed-wrapper {
+  font-size: 13px;
+}
+#star-details-wrapper > * {
+  font-size: 1em;
+  position: relative;
+  text-transform: uppercase;
+}
+#star-details-wrapper .name, #star-details-wrapper #warp, #star-details-wrapper .seed, #star-details-wrapper #warp-wrapper:after {
+  transition-duration: 0.3s;
+}
+
+.name {
+  color: #FFFFFF;
+}/*# sourceMappingURL=style.css.map */
